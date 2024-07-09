@@ -36,9 +36,4 @@ Then cd to your directory where you saved it,and run:
 python tictactoe.py
 ```
 
-**Or**,just open this link:
-```
-https://muntasirmahmud.me/AiTicTacToe/
-```
 
-Or,click [here](https://muntasirmahmud.me/AiTicTacToe/)
