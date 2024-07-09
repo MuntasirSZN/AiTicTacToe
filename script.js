@@ -75,6 +75,7 @@ function updateBoard() {
         for (let j = 0; j < 3; j++) {
             const cell = document.getElementById(`${i}-${j}`);
             cell.textContent = board[i][j];
+            cell.className = `cell ${board[i][j].toLowerCase()}`;
         }
     }
 }
