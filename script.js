@@ -32,7 +32,7 @@ function minimax(board, depth, isMaximizing) {
                 }
             }
         }
-        console.log(`Maximizing: depth=${depth}, maxEval=${maxEval}`);
+        //console.log(`Maximizing: depth=${depth}, maxEval=${maxEval}`);
         return maxEval;
     } else {
         let minEval = Infinity;
@@ -46,7 +46,7 @@ function minimax(board, depth, isMaximizing) {
                 }
             }
         }
-        console.log(`Minimizing: depth=${depth}, minEval=${minEval}`);
+        //console.log(`Minimizing: depth=${depth}, minEval=${minEval}`);
         return minEval;
     }
 }
@@ -69,7 +69,7 @@ function bestMove(board) {
             }
         }
     }
-    console.log(`Best move: ${move.i}, ${move.j} with value: ${bestVal}`);
+    //console.log(`Best move: ${move.i}, ${move.j} with value: ${bestVal}`);
     return move;
 }
 
