@@ -5,11 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        #game-board { display: grid; grid-template-rows: repeat(3, 1fr); gap: 5px; width: 150px; margin: auto; }
-        .row { display: grid; grid-template-columns: repeat(3, 1fr); }
-        .cell { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: #ddd; cursor: pointer; font-size: 24px; }
-        .cell:hover { background: #ccc; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #ff4081;
+            text-align: center;
+        }
+        #game-board {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+            width: 300px;
+            margin: auto;
+            border: 2px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+            border: 2px solid #555;
+            border-radius: 5px;
+            font-size: 36px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .cell:hover {
+            background-color: #555;
+        }
+        .cell:active {
+            background-color: #777;
+        }
+        .cell.x {
+            color: #ff4081;
+        }
+        .cell.o {
+            color: #4caf50;
+        }
     </style>
 </head>
 <body>
