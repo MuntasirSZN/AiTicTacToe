@@ -20,7 +20,9 @@ python
 python3
 ```
 
-**Or**,just a browser.
+### **Or**,just a browser.
+
+Just get a browser.
 
 # How to run
 
@@ -36,4 +38,10 @@ Then cd to your directory where you saved it,and run:
 python tictactoe.py
 ```
 
+## Or,
 
+Go to this link:
+```
+https://muntasirmahmud.me/AiTicTacToe/
+```
+**Consider Giving A Star🌟🌟**
