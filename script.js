@@ -13,10 +13,10 @@ function isBoardFull(board) {
     return board.flat().every(cell => cell !== " ");
 }
 
-// Minimax algorithm for AI move
+// Minimax algorithm for AI move with depth consideration
 function minimax(board, depth, isMaximizing) {
-    if (checkWinner(board, "X")) return -1;
-    if (checkWinner(board, "O")) return 1;
+    if (checkWinner(board, "X")) return -10 + depth;
+    if (checkWinner(board, "O")) return 10 - depth;
     if (isBoardFull(board)) return 0;
 
     if (isMaximizing) {
