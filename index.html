@@ -13,9 +13,6 @@
     </div>
     <script type="text/python">
 from browser import document, alert, html
-import random
-
-# Python logic for Tic-Tac-Toe
 
 def check_winner(board, player):
     for i in range(3):
@@ -110,10 +107,7 @@ def reset_board():
     board = [[" " for _ in range(3)] for _ in range(3)]
     update_board()
 
-# Initialize the game board
 board = [[" " for _ in range(3)] for _ in range(3)]
-
-# Create the HTML for the game board
 game_board = document["game-board"]
 for i in range(3):
     row = html.DIV(Class="row")
@@ -123,7 +117,6 @@ for i in range(3):
         row <= cell
     game_board <= row
 
-# Initial board setup
 update_board()
     </script>
     <style>
