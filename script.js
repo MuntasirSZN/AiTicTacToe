@@ -5,8 +5,8 @@ function checkWinner(board, player) {
             return true;
         }
     }
-    return (board[0][0] === player && board[1][1] === player && board[2][2] === player) ||
-           (board[0][2] === player && board[1][1] === player && board[2][0] === player);
+    //return (board[0][0] === player && board[1][1] === player && board[2][2] === player) ||
+           //(board[0][2] === player && board[1][1] === player && board[2][0] === player);
 }
 
 // Helper function to check if the board is full
@@ -32,8 +32,8 @@ function minimax(board, depth, isMaximizing) {
                 }
             }
         }
-        console.log(`Maximizing: depth=${depth}, maxEval=${maxEval}`);
-        return maxEval;
+        //console.log(`Maximizing: depth=${depth}, maxEval=${maxEval}`);
+        //return maxEval;
     } else {
         let minEval = Infinity;
         for (let i = 0; i < 3; i++) {
@@ -46,8 +46,8 @@ function minimax(board, depth, isMaximizing) {
                 }
             }
         }
-        console.log(`Minimizing: depth=${depth}, minEval=${minEval}`);
-        return minEval;
+        //console.log(`Minimizing: depth=${depth}, minEval=${minEval}`);
+        //return minEval;
     }
 }
 
@@ -69,8 +69,8 @@ function bestMove(board) {
             }
         }
     }
-    console.log(`Best move: ${move.i}, ${move.j} with value: ${bestVal}`);
-    return move;
+    //console.log(`Best move: ${move.i}, ${move.j} with value: ${bestVal}`);
+    //return move;
 }
 
 // Update the board UI
