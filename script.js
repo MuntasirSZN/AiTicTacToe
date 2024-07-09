@@ -5,7 +5,8 @@ function checkWinner(board, player) {
             return true;
         }
     }
-    return board.every((row, idx) => row[idx] === player) || board.every((row, idx) => row[2 - idx] === player);
+    return (board[0][0] === player && board[1][1] === player && board[2][2] === player) ||
+           (board[0][2] === player && board[1][1] === player && board[2][0] === player);
 }
 
 // Helper function to check if the board is full
@@ -13,7 +14,7 @@ function isBoardFull(board) {
     return board.flat().every(cell => cell !== " ");
 }
 
-// Minimax algorithm for AI move with depth consideration
+// Minimax algorithm for AI move with depth consideration and logging
 function minimax(board, depth, isMaximizing) {
     if (checkWinner(board, "X")) return -10 + depth;
     if (checkWinner(board, "O")) return 10 - depth;
@@ -31,6 +32,7 @@ function minimax(board, depth, isMaximizing) {
                 }
             }
         }
+        console.log(`Maximizing: depth=${depth}, maxEval=${maxEval}`);
         return maxEval;
     } else {
         let minEval = Infinity;
@@ -44,11 +46,12 @@ function minimax(board, depth, isMaximizing) {
                 }
             }
         }
+        console.log(`Minimizing: depth=${depth}, minEval=${minEval}`);
         return minEval;
     }
 }
 
-// Find the best move for AI
+// Find the best move for AI with logging
 function bestMove(board) {
     let bestVal = -Infinity;
     let move = null;
@@ -66,6 +69,7 @@ function bestMove(board) {
             }
         }
     }
+    console.log(`Best move: ${move.i}, ${move.j} with value: ${bestVal}`);
     return move;
 }
 
