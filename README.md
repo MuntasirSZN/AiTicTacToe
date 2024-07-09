@@ -1,6 +1,6 @@
 # AI Tic Tac Toe
 
-This is a simple tic tac toe game, where you can play with AI. This whole code is written in python. 
+This is a simple tic tac toe game, where you can play with AI. This whole code is written in python. Also,in html and javascript.
 
 # Requirements
 
@@ -15,10 +15,12 @@ You can check if python is installed by just running this:
 ```
 python
 ```
-**Or**:
+## **Or**:
 ```
 python3
 ```
+
+**Or**,just a browser.
 
 # How to run
 
@@ -34,3 +36,9 @@ Then cd to your directory where you saved it,and run:
 python tictactoe.py
 ```
 
+**Or**,just open this link:
+```
+https://muntasirmahmud.me/AiTicTacToe/
+```
+
+Or,click [here](https://muntasirmahmud.me/AiTicTacToe/)
