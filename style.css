@@ -7,6 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 .container {
@@ -21,12 +22,9 @@ h1 {
 .game-board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
     gap: 10px;
     margin: 20px auto;
-}
-
-.row {
-    display: flex;
 }
 
 .cell {
@@ -90,6 +88,7 @@ footer a:hover {
 @media (max-width: 500px) {
     .game-board {
         grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
         gap: 5px;
     }
 
