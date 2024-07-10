@@ -5,6 +5,7 @@ function checkWinner(board, player) {
             return true;
         }
     }
+    return board.every((row, idx) => row[idx] === player) || board.every((row, idx) => row[2 - idx] === player);
 }
 
 // Helper function to check if the board is full
@@ -12,10 +13,10 @@ function isBoardFull(board) {
     return board.flat().every(cell => cell !== " ");
 }
 
-// Minimax algorithm for AI move with depth consideration and logging
+// Minimax algorithm for AI move
 function minimax(board, depth, isMaximizing) {
-    if (checkWinner(board, "X")) return -10 + depth;
-    if (checkWinner(board, "O")) return 10 - depth;
+    if (checkWinner(board, "X")) return -1;
+    if (checkWinner(board, "O")) return 1;
     if (isBoardFull(board)) return 0;
 
     if (isMaximizing) {
@@ -30,6 +31,7 @@ function minimax(board, depth, isMaximizing) {
                 }
             }
         }
+        return maxEval;
     } else {
         let minEval = Infinity;
         for (let i = 0; i < 3; i++) {
@@ -42,10 +44,11 @@ function minimax(board, depth, isMaximizing) {
                 }
             }
         }
+        return minEval;
     }
 }
 
-// Find the best move for AI with logging
+// Find the best move for AI
 function bestMove(board) {
     let bestVal = -Infinity;
     let move = null;
@@ -63,6 +66,7 @@ function bestMove(board) {
             }
         }
     }
+    return move;
 }
 
 // Update the board UI
@@ -71,7 +75,6 @@ function updateBoard() {
         for (let j = 0; j < 3; j++) {
             const cell = document.getElementById(`${i}-${j}`);
             cell.textContent = board[i][j];
-            cell.className = `cell ${board[i][j].toLowerCase()}`;
         }
     }
 }
