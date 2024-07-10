@@ -98,7 +98,7 @@ footer {
 }
 
 footer p {
-    font-size: 1em;
+    font-size: 1.3em;
 }
 
 footer a {
@@ -108,7 +108,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #ff6347;
+    color: #604e83;
 }
 
 @media (max-width: 500px) {
