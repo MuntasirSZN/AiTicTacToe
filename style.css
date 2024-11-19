@@ -1,28 +1,53 @@
 body {
     margin: 0;
     font-family: 'Fira Code', sans-serif;
-    background-color: #1c1c1c;
-    color: #f5f5f5;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme {
+    background-color: #1c1c1c;
+    color: #f5f5f5;
+}
+
+body.light-theme {
+    background-color: #f5f5f5;
+    color: #1c1c1c;
 }
 
 .container {
     text-align: center;
-    background-color: #2c2c2c;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme .container {
+    background-color: #2c2c2c;
+}
+
+body.light-theme .container {
+    background-color: #ffffff;
 }
 
 h1 {
     font-size: 3em;
     margin-bottom: 0.5em;
-    color: #ffeb3b;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    transition: color 0.3s ease;
+}
+
+body.dark-theme h1 {
+    color: #ffeb3b;
+}
+
+body.light-theme h1 {
+    color: #333;
 }
 
 .game-board {
@@ -36,7 +61,6 @@ h1 {
 .cell {
     width: 150px;
     height: 150px;
-    background-color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,10 +72,25 @@ h1 {
     transition: background-color 0.3s ease, transform 0.2s, box-shadow 0.3s;
 }
 
+body.dark-theme .cell {
+    background-color: #333;
+}
+
+body.light-theme .cell {
+    background-color: #e0e0e0;
+}
+
 .cell:hover {
-    background-color: #555;
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .cell:hover {
+    background-color: #555;
+}
+
+body.light-theme .cell:hover {
+    background-color: #c0c0c0;
 }
 
 .cell.x {
@@ -74,13 +113,11 @@ h1 {
     to { transform: scale(1); }
 }
 
-.reset-button {
+.reset-button, .theme-toggle {
     padding: 10px 20px;
     font-size: 1.3em;
     margin-top: 20px;
     cursor: pointer;
-    background-color: #444;
-    color: #f5f5f5;
     border: none;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -88,10 +125,27 @@ h1 {
     font-family: 'Fira Code';
 }
 
-.reset-button:hover {
-    background-color: #666;
+body.dark-theme .reset-button, body.dark-theme .theme-toggle {
+    background-color: #444;
+    color: #f5f5f5;
+}
+
+body.light-theme .reset-button, body.light-theme .theme-toggle {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+.reset-button:hover, .theme-toggle:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .reset-button:hover, body.dark-theme .theme-toggle:hover {
+    background-color: #666;
+}
+
+body.light-theme .reset-button:hover, body.light-theme .theme-toggle:hover {
+    background-color: #555;
 }
 
 footer {
@@ -125,7 +179,7 @@ footer a:hover {
         font-size: 2em;
     }
 
-    .reset-button {
+    .reset-button, .theme-toggle {
         padding: 8px 16px;
         font-size: 0.8em;
     }
