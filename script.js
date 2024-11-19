@@ -123,12 +123,6 @@ function aiMove() {
     }
 }
 
-// Toggle theme
-function toggleTheme() {
-    document.body.classList.toggle('dark-theme');
-    document.body.classList.toggle('light-theme');
-}
-
 // Initialize the game
 let board = Array.from({ length: 3 }, () => Array(3).fill(" "));
 const gameBoard = document.getElementById("game-board");
@@ -147,3 +141,8 @@ for (let i = 0; i < 3; i++) {
 }
 
 updateBoard();
+
+// Theme toggler
+function toggleTheme() {
+    document.body.classList.toggle('light-theme');
+}
